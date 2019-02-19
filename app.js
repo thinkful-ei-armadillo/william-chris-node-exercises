@@ -32,7 +32,7 @@ app.get('/cipher', (req, res) => {
     result += String.fromCharCode(text.charCodeAt(i) + shift);
   }
   res.send(result);
-
+  console.log(String.fromCharCode('A'));
 });
 
 app.listen(8000, () => {
