@@ -35,6 +35,17 @@ app.get('/cipher', (req, res) => {
   console.log(String.fromCharCode('A'));
 });
 
+app.get('/lotto', (req, res) =>{
+  const numbers = req.query.arr; 
+  const randomNumbers = [];
+  for(i = 1; i <=6; i++){
+    randomNumbers.push(Math.floor(Math.random() * 21)
+  }
+
+}); 
+
+
 app.listen(8000, () => {
   console.log('Server listening on port 8000');
 });
+
