@@ -11,13 +11,21 @@ const playstore = require('./playstore.js');
 // console.log(playstore);
 
 apps.get('/apps', (req, res) => {
-  const { search = ' ', sort } = req.query;
+  const { search = '', sort = '', genre } = req.query;
 
   if(sort) {
     if(!['App', 'Rating'].includes(sort)) {
       return res
         .status(400)
         .send('Sort must be one of App or Rating');
+    }
+  }
+
+  if(genre){
+    if(!['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card'].includes(genre)){
+      return res
+        .status(400)
+        .send('Genre must be Action, Puzzle, Strategy, Casual, Arcade, or Card'); 
     }
   }
 
@@ -28,6 +36,13 @@ apps.get('/apps', (req, res) => {
       .sort((a, b) => {
         return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
       });
+  }
+
+  if(genre){
+    results = results.filter((program) => {
+      console.log(program.Genres);
+      console.log(genre); 
+      return program.Genres.includes(genre)}); 
   }
 
   res.json(results);
