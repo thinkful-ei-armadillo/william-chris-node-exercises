@@ -5,19 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node apps.js",
-    "dev": "nodemon apps",
-    "debug": "ndb node apps"
+    "start": "node app.js",
+    "dev": "nodemon app",
+    "debug": "ndb node app"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "ndb": "^1.0.43"
+    "ndb": "^1.0.43",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10",
-    "morgan": "^1.9.1"
+    "nodemon": "^1.18.10"
   }
 }

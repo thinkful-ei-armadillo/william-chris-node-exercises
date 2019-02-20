@@ -38,10 +38,9 @@ app.get('/cipher', (req, res) => {
 app.get('/lotto', (req, res) =>{
   const numbers = req.query.arr; 
   const randomNumbers = [];
-  for(i = 1; i <=6; i++){
-    randomNumbers.push(Math.floor(Math.random() * 21)
+  for(let i = 1; i <=6; i++){
+    randomNumbers.push(Math.floor(Math.random() * 21)); 
   }
-
 }); 
 
 
